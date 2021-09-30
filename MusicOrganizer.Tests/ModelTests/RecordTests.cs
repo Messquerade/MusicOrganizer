@@ -44,6 +44,15 @@ namespace MusicOrganizer.Tests
       newRecord.Title = "Updated Value";
       Assert.AreEqual("Updated Value", newRecord.Title);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnListOfRecords_ListOfRecords()
+    {
+      Record newRecord = new Record("Test");
+      Record anotherRecord = new Record("Another Title");
+      List<Record> listOfRecords = new List<Record> {newRecord, anotherRecord};
+      CollectionAssert.AreEqual(listOfRecords, Record.GetAll());
+    }
     
 
   }

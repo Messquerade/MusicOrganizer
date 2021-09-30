@@ -20,12 +20,13 @@ namespace MusicOrganizer.Models
     {
       _instances.Clear();
     }
+
+    public static List<Record> GetAll()
+    {
+      return _instances;
+    }
   }
 }
 
 
-//  public static List<Record> GetAll()
-//     {
-//       return _instances;
-//     }
 
