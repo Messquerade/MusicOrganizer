@@ -7,6 +7,8 @@ namespace MusicOrganizer.Models
     public string Title { get; set; }
     public int Id{get;}
     private static List<Record> _instances = new List<Record>{};
+    public string Artist {get; set;}
+
     
 
     public Record(string title)
@@ -14,6 +16,7 @@ namespace MusicOrganizer.Models
       Title = title;
       _instances.Add(this);
       Id = _instances.Count;
+      Artist = "";
     }
 
     public static void ClearAll()
@@ -29,6 +32,11 @@ namespace MusicOrganizer.Models
     public static Record Find(int id)
     {
       return _instances[id - 1];
+    }
+
+    public void AddArtist(string name)
+    {
+      Artist = name;
     }
   }
 }

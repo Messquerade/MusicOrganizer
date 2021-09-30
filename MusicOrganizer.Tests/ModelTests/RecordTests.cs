@@ -63,5 +63,13 @@ namespace MusicOrganizer.Tests
 
     }
 
+    [TestMethod]
+    public void AddArtist_SetArtist_String()
+    {
+      Record newRecord = new Record("Test");
+      newRecord.AddArtist("John Smith");
+      Assert.AreEqual("John Smith", newRecord.Artist);
+    }
+
   }
 }

@@ -26,5 +26,12 @@ namespace MusicOrganizer.Controllers
       Record newRecord = new Record(title);
       return RedirectToAction("Index");
     }
+
+    [HttpGet("/record/{Id}")]
+    public ActionResult Show(int id)
+    {
+      Record foundRecord = Record.Find(id);
+      return View(foundRecord);
+    }
   }
 }

@@ -7,6 +7,10 @@ namespace MusicOrganizer.Controllers
 {
   public class ArtistController : Controller
   {
-
+    [HttpGet("/record/{Id}/artist/new")]
+    public ActionResult New()
+    {
+      return View();
+    }
   }
 }
